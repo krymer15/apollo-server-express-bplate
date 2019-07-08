@@ -1,0 +1,21 @@
+{
+  "name": "apollo-server-express-bplate",
+  "version": "1.0.0",
+  "description": "Boilerplate GraphQL server using Apollo-Server and ExpressJS",
+  "main": "server.js",
+  "scripts": {
+    "server": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "Kris Rymer",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server-express": "^2.6.7",
+    "express": "^4.17.1",
+    "graphql": "^14.4.2",
+    "mongoose": "^5.6.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
