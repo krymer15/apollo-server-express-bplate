@@ -2,6 +2,8 @@
 
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
+// Import to use graphiql instead of GraphQL Playground
+const graphqlHTTP = require('express-graphql');
 
 // Import Mongoose instance
 const mongoose = require('./config/database');
@@ -18,6 +20,12 @@ const server = new ApolloServer({
 
 // Initialize an express app for middleware
 const app = express();
+
+// Express middleware to apollo server, to use GraphiQL in place of GraphQL Playground
+app.get('/graphql', graphqlHTTP({
+    schema: typeDefs,
+    graphiql: true
+}) )
 
 // Use Express app as middleware in Apollo GraphQL server
 server.applyMiddleware({ app });
